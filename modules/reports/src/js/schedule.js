@@ -383,3 +383,39 @@ function validate_form(formData, jqForm, options) {
 	$('.schedule_err_display').remove();
     return true;
 }
+$(document).ready(function() {
+ $('#schedule-report-sendtime').click(function(e){
+   $('.sendtime-quickselect').html(quickselect_data($(this).val(),"s"));
+   $('.sendtime-quickselect').show();
+    e.stopPropagation();
+  });
+
+  $('.sendtime-quickselect').on('click', 'div.time', function() {
+    var selected_time = $(this).html();
+    $('#schedule-report-sendtime').val(selected_time);
+    $('.sendtime-quickselect').hide();
+  });
+
+  $(document).click(function(){
+    $('.quickselect').hide();
+  });
+  
+  $('#sch-repeat-text-box').on('change', function(){
+    var selected = $(this).val();
+    if(selected == "week"){
+        $('#sch-month-opt').hide();
+        $('#sch-on').show();
+        $('#sch-week-opt').show();
+
+    }else if(selected == "month"){
+        $('#sch-week-opt').hide();
+        $('#sch-on').show();
+        $('#sch-month-opt').show();
+    }else{  
+        $('#sch-week-opt').hide();
+        $('#sch-on').hide();
+        $('#sch-month-opt').hide();
+    }
+
+  });
+});

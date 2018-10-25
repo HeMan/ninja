@@ -54,6 +54,74 @@
 				</td>
 			</tr>
 			<tr>
+				<td class="label sub-heading">Schedule</td>
+			</tr>
+			<tr>
+				<td>
+					<div>Create and send at</div>
+					<div style="position:relative">
+						<input id="schedule-report-sendtime" class="time">
+						<div id="sendtime-options" class="sendtime-quickselect quickselect hide"></div>
+					</div>
+				</td>
+                </tr>
+                <tr>
+                	<td>
+                		<div>Repeat every</div>
+                		<div>
+                			<input class="num" type="number" min="1" value="1">
+                			<select id="sch-repeat-text-box" class="repeat-text">
+                				<option value="day">Day</option>
+                				<option value="week">Week</option>
+                				<option value="month">Month</option>
+                			</select>
+                		</div>
+                	</td>
+                </tr>
+                <tr>
+                	<td>
+                        <div id="sch-on" class="hide">On</div>
+                        <div id="sch-week-opt" class="hide">
+                           	<input class="hide" checked="checked" type="radio" name="week_on" value="">
+                            <input wno="1" name="week_on_day[]" tag="week-Monday" type="checkbox" value='{"day":1}'>
+                            <span wno="1" tag="Monday">Mon</span>
+                            <input wno="2" name="week_on_day[]" tag="week-Tuesday" type="checkbox" value='{"day":2}'>
+                            <span wno="2" tag="Tuesday">Tue</span>
+                            <input wno="3" name="week_on_day[]" tag="week-Wednesday" type="checkbox" value='{"day":3}'>
+                            <span wno="3" tag="Wednesday">Wed</span>
+                            <input wno="4" name="week_on_day[]" tag="week-Thursday" type="checkbox" value='{"day":4}'>
+                            <span wno="4" tag="Thursday">Thu</span>
+                            <input wno="5" name="week_on_day[]" tag="week-Friday" type="checkbox" value='{"day":5}'>
+                            <span wno="5" tag="Friday">Fri</span>
+                            <input wno="6" name="week_on_day[]" tag="week-Saturday" type="checkbox" value='{"day":6}'>
+                            <span wno="6" tag="Saturday">Sat</span>
+                            <input wno="0" name="week_on_day[]" tag="week-Sunday" type="checkbox" value='{"day":7}'>
+                            <span wno="0" tag="Sunday">Sun</span>
+                        </div>
+                        <div id="sch-month-opt" class="hide">
+                            <div class="relative"><input id="sch-any-day-month" checked="checked" type="radio" name="sch-month-on"> the
+                                    <select name="rec-on-no-box" id="rec-on-no-box" class="rec-on-no-box" value="">
+                                        <option>first</option>
+                                        <option>second</option>
+                                        <option>third</option>
+                                        <option>fourth</option>
+                                        <option>last</option>
+                                    </select>
+                                    <select name="rec-on-day-box" id="rec-on-day-box" class="rec-on-day-box" value="">
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+                                        <option>Thursday</option>
+                                        <option>Friday</option>
+                                        <option>Saturday</option>
+                                        <option>Sunday</option>
+                                    </select>
+                            </div>
+                            <div class="relative"><input id="sch-last-day-month" type="radio" name="last-day" name=""> the last day of the month </div>
+                        </div>
+                    </td>
+                </tr>
+			<tr>
 				<td colspan="2">
 					<span>
 						<input type="submit" class="button save" value="<?php echo _('Save') ?>" />
