@@ -40,3 +40,7 @@ KeepAlive On
 	# We probably want a seperate file, like /etc/php.d/op5.ini
 	php_value session.gc_maxlifetime 86400
 </Location>
+<Files ~ "nacoma_hooks.py$|ninja_hooks.py$|geomap_hook.py$|ninja_db_init.sh$">
+Order allow,deny
+Deny from all
+</Files>
